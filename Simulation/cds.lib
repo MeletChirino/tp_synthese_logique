@@ -1,0 +1,3 @@
+define WORK ./WORK
+include /soft/CADENCE/incisive152/tools/inca/files/cds.lib
+define c18 /home/tournier/c18
