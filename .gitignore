@@ -11,3 +11,9 @@ Synthese/work_synopsys/*
 # vim swap files
 **.swp
 **.swa
+
+#simulation files
+**.jpg
+**.jpeg
+**.png
+**.ps
