@@ -1,3 +1,13 @@
 **.pak
 **.key
 Synthese/work_synopsys/*
+
+# work library ghdl
+**.cf
+
+# wave simulation files
+**.ghw
+
+# vim swap files
+**.swp
+**.swa
