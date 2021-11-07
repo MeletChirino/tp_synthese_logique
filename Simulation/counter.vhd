@@ -20,7 +20,7 @@ begin
 
 	begin
 	if (clock'event and clock = '1') then 		
-		if (init12'event and init12 = '1') then
+		if (init12 = '1') then
 		--if there init12 is pressed
 			counter <= 12;
 		elsif (enable = '1') then 

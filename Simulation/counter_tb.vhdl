@@ -38,7 +38,7 @@ begin
 			clk <= not clk;
 		end loop;
 		init12 <= '1';
-		wait for 1 ns;
+		wait for 3 ns;
 		init12 <= '0';
 		enable <= '1';
 		for i in 0 to 34 loop
