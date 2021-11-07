@@ -54,11 +54,21 @@ architecture simulation of montre is
 
 begin
     Compteur_1_to_12_or_0_to_23 : 
-    compteur  port map (clock, opt24, enable, init12, BCDu, BCDd);
+    compteur  port map (
+    	clock => clock,
+       	opt24 => opt24,
+       	enable => enable,
+       	init12 => init12,
+       	BCDu => BCDu,
+	BCDd => BCDd);
     Decodeur_4bits_to_7segments_dizaines :
-    decodeur  port map (BCDu, seg_d);
+    decodeur  port map (
+    	BCD => BCDd,
+	segments => seg_d);
     Decodeur_4bits_to_7segments_unites :
-    decodeur  port map (BCDd, seg_u);
+    decodeur  port map (
+    	BCD => BCDu,
+	segments => seg_u);
 
     -- synopsys synthesis_off
 
