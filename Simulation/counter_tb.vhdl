@@ -29,7 +29,7 @@ begin
 		init12 <= '1';
 		wait for 1 ns;
 		init12 <= '0';
-		opt24 <= '0';
+		opt24 <= '1';
 		init12 <= '1';
 		wait for 1 ns;
 		init12 <= '0';
