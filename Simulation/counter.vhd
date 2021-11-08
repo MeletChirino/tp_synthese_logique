@@ -28,7 +28,11 @@ begin
 		end if;
 	end if;
 	if counter = 24 then
-		counter <= 0;		
+		if opt24 = '1' then
+			counter <= 0;		
+		else 
+			counter <= 12;
+		end if;
 	end if;
 	number <= counter;
 	end process COUNT;
