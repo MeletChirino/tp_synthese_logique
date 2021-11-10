@@ -10,35 +10,38 @@ entity compteur is
 end entity compteur;
 
 architecture synthetisable of compteur is
-	signal counter		: natural range 0 to 24;
+	--signal counter	        : natural range 0 to 24;
 	signal final_number	: natural range 0 to 24;
 	signal number		: natural range 0 to 24;
 	signal unit         	: natural range 0 to 9;
 	signal dec		: natural range 0 to 9;
 begin
-	COUNT : process (clock, counter) is
-
+	COUNT : process (clock) is
+	variable counter	: natural range 0 to 24;
 	begin
-	if (clock'event and clock = '1') then 		
+	if (clock'event and clock = '1') then 	
 		if (init12 = '1') then
 		--if there init12 is pressed
-			counter <= 12;
+			counter := 12;
 		elsif (enable = '1') then 
-			counter <= counter + 1;
+			counter := counter + 1;
+		end if;
+
+		if counter = 24 then
+			if opt24 = '1' then
+				counter := 0;		
+			else 
+				counter := 12;
+			end if;
+		end if;
+
+		if(opt24 = '0' and counter > 12) then
+			final_number <= counter - 12;
+		else
+			final_number <= counter;
 		end if;
 	end if;
-	if counter = 24 then
-		if opt24 = '1' then
-			counter <= 0;		
-		else 
-			counter <= 12;
-		end if;
-	end if;
-	number <= counter;
 	end process COUNT;
-final_number <= number - 12 when (opt24 = '0' and counter > 12) else
-		number when (opt24 = '0' and 12 >= counter) else
-		number when (opt24 = '1');
 unit <= final_number mod 10;
 dec <= (final_number - unit) / 10 when (final_number >= 10) else
        0;
