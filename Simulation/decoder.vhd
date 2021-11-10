@@ -8,9 +8,9 @@ entity decodeur is
 	);
 end entity;
 
-architecture rtl of decodeur is
+architecture combinatoire of decodeur is
 begin
-	with input select output <=
+	with BCD select segments <=
 		"1111110" when x"0",
 		"0110000" when x"1",
 		"1101101" when x"2",
@@ -22,4 +22,4 @@ begin
 		"1111111" when x"8",
 		"1110011" when x"9",
 		"0000000" when others;
-end rtl;
+end combinatoire;

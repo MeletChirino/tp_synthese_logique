@@ -61,10 +61,12 @@ begin
        	init12 => init12,
        	BCDu => BCDu,
 	BCDd => BCDd);
+
     Decodeur_4bits_to_7segments_dizaines :
     decodeur  port map (
     	BCD => BCDd,
 	segments => seg_d);
+
     Decodeur_4bits_to_7segments_unites :
     decodeur  port map (
     	BCD => BCDu,

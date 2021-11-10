@@ -9,7 +9,7 @@ entity compteur is
 	);
 end entity compteur;
 
-architecture rtl of compteur is
+architecture synthetisable of compteur is
 	signal counter		: natural range 0 to 24;
 	signal final_number	: natural range 0 to 24;
 	signal number		: natural range 0 to 24;
@@ -44,4 +44,4 @@ dec <= (final_number - unit) / 10 when (final_number >= 10) else
        0;
 BCDu <= std_logic_vector(to_unsigned(unit, 4));
 BCDd <= std_logic_vector(to_unsigned(dec, 4));
-end rtl;
+end synthetisable;
