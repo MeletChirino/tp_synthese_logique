@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version H-2013.03-SP5 for amd64 -- Oct 18, 2013
-#@ # Date:   Fri Nov  5 10:19:59 2021
+#@ # Date:   Thu Nov 18 08:40:00 2021
 #@ # Run by: beroy@madiran
 #@ 
 
@@ -4840,95 +4840,619 @@ source /home/beroy/FlotSynthese/Synthese/.synopsys_dc.setup
 
 gui_start
 gui_set_pref_value -category {SelectByNamePalette} -key {ObjectType} -value {Cells}
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/nopartage.vhd}
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/nopartage.vhd}
-elaborate PARENTHESE -architecture RTL -library DEFAULT
-change_selection [get_s parenthese]
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/nopartage.vhd}
-elaborate NO_PARTAGE -architecture RTL -library DEFAULT
-change_selection [get_s no_partage]
-change_selection [get_s no_partage]
-change_selection -remove [get_s no_partage]
-compile -exact_map
-write -hierarchy -format ddc
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/partage.vhd}
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/partage.vhd}
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/partage.vhd}
-elaborate PARTAGE -architecture RTL -library DEFAULT
-change_selection [get_s partage]
-change_selection [get_s partage]
-change_selection -remove [get_s partage]
-compile -exact_map
-compile -exact_map
-change_selection [get_s partage]
-change_selection [get_s partage]
-change_selection -remove [get_s partage]
-change_selection [get_s U18]
-change_selection [get_s U24]
+read_file -format vhdl {/home/beroy/FlotSynthese/Synthese/montre.vhd}
+change_selection [get_s Compteur_1_to_12_or_0_to_23]
+change_selection [get_s Decodeur_4bits_to_7segments_dizaines]
+change_selection [get_s Decodeur_4bits_to_7segments_unites]
+change_selection [get_s montre]
+change_selection [get_s Compteur_1_to_12_or_0_to_23]
+change_selection [get_s Decodeur_4bits_to_7segments_dizaines]
+change_selection [get_s Decodeur_4bits_to_7segments_unites]
+change_selection [get_s Compteur_1_to_12_or_0_to_23]
+change_selection [get_s montre]
+change_selection [get_s montre]
+change_selection [get_s montre]
+change_selection [get_s montre]
+change_selection -remove [get_s montre]
+change_selection [get_s Compteur_1_to_12_or_0_to_23]
 change_selection 
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/partage.vhd}
-elaborate PARTAGE -architecture RTL -library DEFAULT
-compile -exact_map
-change_selection [get_s partage]
-change_selection [get_s partage]
-change_selection [get_s partage]
-change_selection [get_s partage]
-change_selection -remove [get_s partage]
-change_selection [get_s {U26/Q U26/S U26/B U26 n19 S n31 n22 n28}]
+change_selection [get_s Decodeur_4bits_to_7segments_dizaines]
+change_selection [get_s Decodeur_4bits_to_7segments_unites]
+change_selection [get_s Compteur_1_to_12_or_0_to_23]
+change_selection [get_s Compteur_1_to_12_or_0_to_23/div_46]
+change_selection [get_s montre]
+change_selection [get_s montre]
+change_selection [all_outputs]
+change_selection [get_s montre]
+change_selection [all_outputs]
+set_load 1 [get_ports "seg_d[5]"]
+set_load 1 [get_ports "seg_d[6]"]
+set_load 1 [get_ports "seg_d[4]"]
+set_load 1 [get_ports "seg_d[3]"]
+set_load 1 [get_ports "seg_d[2]"]
+set_load 1 [get_ports "seg_d[1]"]
+set_load 1 [get_ports "seg_d[0]"]
+set_load 1 [get_ports "seg_u[0]"]
+set_load 1 [get_ports "seg_u[1]"]
+set_load 1 [get_ports "seg_u[2]"]
+set_load 1 [get_ports "seg_u[3]"]
+set_load 1 [get_ports "seg_u[4]"]
+set_load 1 [get_ports "seg_u[5]"]
+set_load 1 [get_ports "seg_u[6]"]
+change_selection [all_inputs]
+set_drive 1 [get_ports "clock"]
+set_drive 1 [get_ports "opt24"]
+set_drive 1 [get_ports "enable"]
+set_drive 1 [get_ports "init12"]
 change_selection 
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/partage.vhd}
-elaborate PARTAGE -architecture RTL -library DEFAULT
-change_selection [get_s partage]
-change_selection [get_s partage]
-change_selection -remove [get_s partage]
-change_selection [get_s C15]
-change_selection [get_s add_30]
-change_selection [get_s C15]
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/nopartage.vhd}
-elaborate NO_PARTAGE -architecture RTL -library DEFAULT
-change_selection [get_s no_partage]
-change_selection [get_s no_partage]
-change_selection -remove [get_s no_partage]
-change_selection [get_s C15]
+set_wire_load_model -name c18_wl_30k -library c18_IOLIB_TYP
+set_wire_load_model -name c18_wl_30k -library c18_IOLIB_TYP
+set_operating_conditions -library c18_IOLIB_TYP typical
+set_operating_conditions -library c18_IOLIB_TYP typical
+change_selection [get_s clock]
+create_clock -name "clock" -period 5 -waveform { 0 2.5  }  { clock  }
+change_selection [get_ports *]
+change_selection 
+change_selection [all_inputs]
+set_input_delay -clock clock  -max -rise 0.2 "init12 enable clock opt24"
+set_input_delay -clock clock -max -fall 0.2 "init12 enable clock opt24"
+change_selection 
+change_selection [all_outputs]
+set_output_delay -clock clock  -max -rise 0.2 "{seg_u[5]} {seg_d[5]} {seg_u[0]} {seg_d[0]} {seg_u[2]} {seg_d[2]} {seg_u[1]} {seg_d[1]} {seg_u[4]} {seg_d[4]} {seg_u[3]} {seg_d[3]} {seg_u[6]} {seg_d[6]}"
+set_output_delay -clock clock -max -fall 0.2 "{seg_u[5]} {seg_d[5]} {seg_u[0]} {seg_d[0]} {seg_u[2]} {seg_d[2]} {seg_u[1]} {seg_d[1]} {seg_u[4]} {seg_d[4]} {seg_u[3]} {seg_d[3]} {seg_u[6]} {seg_d[6]}"
+change_selection 
+set_max_area 0.0
+set_max_area 0.0
+write_script > /home/beroy/FlotSynthese/Synthese/setup.dc
+uplevel #0 source /home/beroy/FlotSynthese/Synthese/setup.dc
+#@ # -- Starting source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+#@ ###################################################################
+#@ 
+#@ # Created by write_script -format dctcl on Thu Nov 18 09:16:26 2021
+#@ 
+#@ ###################################################################
+#@ 
+#@ # Set the current_design #
+#@ current_design montre
+#@ 
+#@ set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
+#@ set_operating_conditions typical -library c18_IOLIB_TYP
+#@ set_wire_load_model -name c18_wl_30k -library c18_IOLIB_TYP
+#@ set_max_area 0
+#@ set_load -pin_load 1 [get_ports {seg_u[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[0]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[0]}]
+#@ create_clock [get_ports clock]  -period 5  -waveform {0 2.5}
+#@ set_input_delay -clock clock  -max 0.2  [get_ports clock]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports init12]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports enable]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports opt24]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[6]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[6]}]
+#@ set_drive 1  [get_ports clock]
+#@ set_drive 1  [get_ports opt24]
+#@ set_drive 1  [get_ports enable]
+#@ set_drive 1  [get_ports init12]
+#@ 1
+#@ # -- End source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+change_selection [get_s montre]
+change_selection 
 compile -exact_map
-change_selection [get_s no_partage]
-change_selection [get_s no_partage]
-change_selection -remove [get_s no_partage]
-elaborate PARENTHESE -architecture RTL -library DEFAULT
-change_selection [get_s parenthese]
-change_selection [get_s parenthese]
-change_selection -remove [get_s parenthese]
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/partage.vhd}
-elaborate PARENTHESE -architecture RTL -library DEFAULT
-change_selection [get_s parenthese]
-change_selection [get_s parenthese]
-change_selection -remove [get_s parenthese]
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/partage.vhd}
-elaborate PARTAGE -architecture RTL -library DEFAULT
-change_selection [get_s partage]
-change_selection [get_s partage]
-change_selection -remove [get_s partage]
-compile -exact_map -area_effort high
-change_selection [get_s partage]
-change_selection [get_s partage]
-change_selection -remove [get_s partage]
-current_design no_partage
-change_selection [get_s no_partage]
-change_selection [get_s no_partage]
-change_selection -remove [get_s no_partage]
-gui_view_port_history -window [gui_get_current_window -view] -dialog
-gui_view_port_history -window [gui_get_current_window -view] -previous
-gui_view_port_history -window [gui_get_current_window -view] -next
-change_selection [get_s no_partage]
-change_selection [get_s no_partage]
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/nopartage.vhd}
-elaborate NO_PARTAGE -architecture RTL -library DEFAULT
-change_selection [get_s no_partage]
-change_selection [get_s no_partage]
-change_selection -remove [get_s no_partage]
-analyze -library WORK -format vhdl {/home/beroy/FlotSynthese/Synthese/partage.vhd}
-elaborate PARTAGE -architecture RTL -library DEFAULT
-change_selection [get_s partage]
-change_selection [get_s partage]
-change_selection -remove [get_s partage]
-exit
+write -hierarchy -format vhdl -output /home/beroy/FlotSynthese/Synthese/desc.vhdl
+remove_design -designs
+read_file -format vhdl {/home/beroy/FlotSynthese/Synthese/montre.vhd}
+change_selection [get_s Decodeur_4bits_to_7segments_unites]
+change_selection [get_s Decodeur_4bits_to_7segments_unites]
+change_selection [get_s {{Decodeur_4bits_to_7segments_unites/segments[3]}}]
+remove_design -designs
+read_file -format vhdl {/home/beroy/FlotSynthese/Synthese/counter.vhd}
+change_selection [get_s compteur]
+compile -exact_map
+read_file -format vhdl {/home/beroy/FlotSynthese/Synthese/decoder.vhd}
+change_selection [get_s decodeur]
+compile -exact_map
+read_file -format vhdl {/home/beroy/FlotSynthese/Synthese/montre.vhd}
+change_selection [get_s montre]
+compile -exact_map
+change_selection [get_s Decodeur_4bits_to_7segments_unites]
+remove_design -designs
+elaborate MONTRE -architecture RTL -library DEFAULT
+uplevel #0 source /home/beroy/FlotSynthese/Synthese/setup.dc
+#@ # -- Starting source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+#@ ###################################################################
+#@ 
+#@ # Created by write_script -format dctcl on Thu Nov 18 09:16:26 2021
+#@ 
+#@ ###################################################################
+#@ 
+#@ # Set the current_design #
+#@ current_design montre
+#@ 
+#@ set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
+#@ set_operating_conditions typical -library c18_IOLIB_TYP
+#@ set_wire_load_model -name c18_wl_30k -library c18_IOLIB_TYP
+#@ set_max_area 0
+#@ set_load -pin_load 1 [get_ports {seg_u[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[0]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[0]}]
+#@ create_clock [get_ports clock]  -period 5  -waveform {0 2.5}
+#@ set_input_delay -clock clock  -max 0.2  [get_ports clock]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports init12]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports enable]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports opt24]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[6]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[6]}]
+#@ set_drive 1  [get_ports clock]
+#@ set_drive 1  [get_ports opt24]
+#@ set_drive 1  [get_ports enable]
+#@ set_drive 1  [get_ports init12]
+#@ 1
+#@ # -- End source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+current_design compteur
+compile -exact_map
+current_design decodeur
+compile -exact_map
+current_design montre
+compile -exact_map
+current_design compteur
+current_design montre
+uplevel #0 { report_area -nosplit }
+change_selection [get_s montre]
+change_selection [get_s montre]
+change_selection -remove [get_s montre]
+change_selection [get_s Compteur_1_to_12_or_0_to_23]
+change_selection -add [get_s Decodeur_4bits_to_7segments_dizaines]
+change_selection -add [get_s Decodeur_4bits_to_7segments_unites]
+write -hierarchy -format ddc -output /home/beroy/FlotSynthese/Synthese/resultats_synthese/asc.vhdl.ddc
+remove_design -designs
+elaborate MONTRE -architecture RTL -library DEFAULT
+change_selection [get_s montre]
+change_selection [get_s montre]
+change_selection -remove [get_s montre]
+uplevel #0 source /home/beroy/FlotSynthese/Synthese/setup.dc
+#@ # -- Starting source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+#@ ###################################################################
+#@ 
+#@ # Created by write_script -format dctcl on Thu Nov 18 09:16:26 2021
+#@ 
+#@ ###################################################################
+#@ 
+#@ # Set the current_design #
+#@ current_design montre
+#@ 
+#@ set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
+#@ set_operating_conditions typical -library c18_IOLIB_TYP
+#@ set_wire_load_model -name c18_wl_30k -library c18_IOLIB_TYP
+#@ set_max_area 0
+#@ set_load -pin_load 1 [get_ports {seg_u[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[0]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[0]}]
+#@ create_clock [get_ports clock]  -period 5  -waveform {0 2.5}
+#@ set_input_delay -clock clock  -max 0.2  [get_ports clock]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports init12]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports enable]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports opt24]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[6]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[6]}]
+#@ set_drive 1  [get_ports clock]
+#@ set_drive 1  [get_ports opt24]
+#@ set_drive 1  [get_ports enable]
+#@ set_drive 1  [get_ports init12]
+#@ 1
+#@ # -- End source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+change_selection [get_s montre]
+change_selection [get_s montre]
+change_selection -remove [get_s montre]
+change_selection [get_s Compteur_1_to_12_or_0_to_23]
+change_selection -add [get_s Decodeur_4bits_to_7segments_dizaines]
+change_selection -add [get_s Decodeur_4bits_to_7segments_unites]
+current_instance /montre
+ungroup [get_selection -type {cell design}] -flatten
+current_instance
+ungroup [get_selection -type {cell design}] -flatten
+compile -exact_map
+change_selection [get_s montre]
+remove_design -designs
+elaborate MONTRE -architecture RTL -library DEFAULT
+uplevel #0 source /home/beroy/FlotSynthese/Synthese/setup.dc
+#@ # -- Starting source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+#@ ###################################################################
+#@ 
+#@ # Created by write_script -format dctcl on Thu Nov 18 09:16:26 2021
+#@ 
+#@ ###################################################################
+#@ 
+#@ # Set the current_design #
+#@ current_design montre
+#@ 
+#@ set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
+#@ set_operating_conditions typical -library c18_IOLIB_TYP
+#@ set_wire_load_model -name c18_wl_30k -library c18_IOLIB_TYP
+#@ set_max_area 0
+#@ set_load -pin_load 1 [get_ports {seg_u[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[0]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[0]}]
+#@ create_clock [get_ports clock]  -period 5  -waveform {0 2.5}
+#@ set_input_delay -clock clock  -max 0.2  [get_ports clock]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports init12]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports enable]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports opt24]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[6]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[6]}]
+#@ set_drive 1  [get_ports clock]
+#@ set_drive 1  [get_ports opt24]
+#@ set_drive 1  [get_ports enable]
+#@ set_drive 1  [get_ports init12]
+#@ 1
+#@ # -- End source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+change_selection [get_s montre]
+change_selection [get_s montre]
+change_selection -remove [get_s montre]
+change_selection [get_s Compteur_1_to_12_or_0_to_23]
+change_selection -add [get_s Decodeur_4bits_to_7segments_dizaines]
+change_selection -add [get_s Decodeur_4bits_to_7segments_unites]
+current_instance /montre
+ungroup [get_selection -type {cell design}] -flatten
+current_instance
+ungroup [get_selection -type {cell design}] -flatten
+remove_design -designs
+elaborate MONTRE -architecture RTL -library DEFAULT
+uplevel #0 source /home/beroy/FlotSynthese/Synthese/setup.dc
+#@ # -- Starting source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+#@ ###################################################################
+#@ 
+#@ # Created by write_script -format dctcl on Thu Nov 18 09:16:26 2021
+#@ 
+#@ ###################################################################
+#@ 
+#@ # Set the current_design #
+#@ current_design montre
+#@ 
+#@ set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
+#@ set_operating_conditions typical -library c18_IOLIB_TYP
+#@ set_wire_load_model -name c18_wl_30k -library c18_IOLIB_TYP
+#@ set_max_area 0
+#@ set_load -pin_load 1 [get_ports {seg_u[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[0]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[0]}]
+#@ create_clock [get_ports clock]  -period 5  -waveform {0 2.5}
+#@ set_input_delay -clock clock  -max 0.2  [get_ports clock]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports init12]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports enable]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports opt24]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[6]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[6]}]
+#@ set_drive 1  [get_ports clock]
+#@ set_drive 1  [get_ports opt24]
+#@ set_drive 1  [get_ports enable]
+#@ set_drive 1  [get_ports init12]
+#@ 1
+#@ # -- End source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+change_selection [get_s montre]
+change_selection [get_s montre]
+change_selection -remove [get_s montre]
+change_selection [get_s Compteur_1_to_12_or_0_to_23]
+change_selection -add [get_s montre]
+change_selection -add [get_s Decodeur_4bits_to_7segments_dizaines]
+change_selection -add [get_s Decodeur_4bits_to_7segments_unites]
+change_selection [get_s montre]
+change_selection 
+change_selection [get_s Compteur_1_to_12_or_0_to_23]
+change_selection -add [get_s Decodeur_4bits_to_7segments_dizaines]
+change_selection -add [get_s Decodeur_4bits_to_7segments_unites]
+current_instance /montre
+ungroup [get_selection -type {cell design}] -flatten
+current_instance
+compile -exact_map
+change_selection [get_s montre]
+change_selection [get_s montre]
+change_selection -remove [get_s montre]
+write -hierarchy -format ddc -output /home/beroy/FlotSynthese/Synthese/resultats_synthese/plat.ddc
+remove_design -designs
+elaborate MONTRE -architecture RTL -library DEFAULT
+uplevel #0 source /home/beroy/FlotSynthese/Synthese/setup.dc
+#@ # -- Starting source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+#@ ###################################################################
+#@ 
+#@ # Created by write_script -format dctcl on Thu Nov 18 09:16:26 2021
+#@ 
+#@ ###################################################################
+#@ 
+#@ # Set the current_design #
+#@ current_design montre
+#@ 
+#@ set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
+#@ set_operating_conditions typical -library c18_IOLIB_TYP
+#@ set_wire_load_model -name c18_wl_30k -library c18_IOLIB_TYP
+#@ set_max_area 0
+#@ set_load -pin_load 1 [get_ports {seg_u[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[0]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[0]}]
+#@ create_clock [get_ports clock]  -period 5  -waveform {0 2.5}
+#@ set_input_delay -clock clock  -max 0.2  [get_ports clock]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports init12]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports enable]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports opt24]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[6]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[6]}]
+#@ set_drive 1  [get_ports clock]
+#@ set_drive 1  [get_ports opt24]
+#@ set_drive 1  [get_ports enable]
+#@ set_drive 1  [get_ports init12]
+#@ 1
+#@ # -- End source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+compile -exact_map
+compile -exact_map
+remove_design -designs
+elaborate MONTRE -architecture RTL -library DEFAULT
+uplevel #0 source /home/beroy/FlotSynthese/Synthese/setup.dc
+#@ # -- Starting source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+#@ ###################################################################
+#@ 
+#@ # Created by write_script -format dctcl on Thu Nov 18 09:16:26 2021
+#@ 
+#@ ###################################################################
+#@ 
+#@ # Set the current_design #
+#@ current_design montre
+#@ 
+#@ set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
+#@ set_operating_conditions typical -library c18_IOLIB_TYP
+#@ set_wire_load_model -name c18_wl_30k -library c18_IOLIB_TYP
+#@ set_max_area 0
+#@ set_load -pin_load 1 [get_ports {seg_u[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[0]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[0]}]
+#@ create_clock [get_ports clock]  -period 5  -waveform {0 2.5}
+#@ set_input_delay -clock clock  -max 0.2  [get_ports clock]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports init12]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports enable]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports opt24]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[6]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[6]}]
+#@ set_drive 1  [get_ports clock]
+#@ set_drive 1  [get_ports opt24]
+#@ set_drive 1  [get_ports enable]
+#@ set_drive 1  [get_ports init12]
+#@ 1
+#@ # -- End source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+uplevel #0 source /home/beroy/FlotSynthese/Synthese/setup.dc
+#@ # -- Starting source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+#@ ###################################################################
+#@ 
+#@ # Created by write_script -format dctcl on Thu Nov 18 09:16:26 2021
+#@ 
+#@ ###################################################################
+#@ 
+#@ # Set the current_design #
+#@ current_design montre
+#@ 
+#@ set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
+#@ set_operating_conditions typical -library c18_IOLIB_TYP
+#@ set_wire_load_model -name c18_wl_30k -library c18_IOLIB_TYP
+#@ set_max_area 0
+#@ set_load -pin_load 1 [get_ports {seg_u[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_u[0]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[6]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[5]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[4]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[3]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[2]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[1]}]
+#@ set_load -pin_load 1 [get_ports {seg_d[0]}]
+#@ create_clock [get_ports clock]  -period 5  -waveform {0 2.5}
+#@ set_input_delay -clock clock  -max 0.2  [get_ports clock]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports init12]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports enable]
+#@ set_input_delay -clock clock  -max 0.2  [get_ports opt24]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[5]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[0]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[2]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[1]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[4]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[3]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_u[6]}]
+#@ set_output_delay -clock clock  -max 0.2  [get_ports {seg_d[6]}]
+#@ set_drive 1  [get_ports clock]
+#@ set_drive 1  [get_ports opt24]
+#@ set_drive 1  [get_ports enable]
+#@ set_drive 1  [get_ports init12]
+#@ 1
+#@ # -- End source /home/beroy/FlotSynthese/Synthese/setup.dc
+
+compile -exact_map
+write -hierarchy -format ddc -output /home/beroy/FlotSynthese/Synthese/resultats_synthese/desc.ddc
+write -hierarchy -format vhdl -output /home/beroy/FlotSynthese/Synthese/resultats_synthese/desc.vhdl
+remove_design -designs
+read_file -format ddc {/home/beroy/FlotSynthese/Synthese/resultats_synthese/desc.ddc}
+write -hierarchy -format vhdl -output /home/beroy/FlotSynthese/Synthese/resultats_synthese/desc_ent.vhdl
+current_design decodeur_1
+current_design compteur
+current_design montre
